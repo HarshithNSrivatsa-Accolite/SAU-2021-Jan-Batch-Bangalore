@@ -1,0 +1,103 @@
+<html> 
+    <head> 
+        <script> 
+            function HNS_form() { 
+                let fname =  
+                    document.forms["RegForm"]["fName"]; 
+                let lname =  
+                    document.forms["RegForm"]["lName"]; 
+                let phone =  
+                    document.forms["RegForm"]["Phone"]; 
+                let email =  
+                    document.forms["RegForm"]["Email"]; 
+                
+  
+                if (fname.value == "") { 
+                    window.alert("Please enter your first name."); 
+                    name.focus(); 
+                    return false; 
+                } 
+  
+                if (lname.value == "") { 
+                    window.alert("Please enter your last name."); 
+                    lname.focus(); 
+                    return false; 
+                } 
+  
+                if (email.value == "" || 
+                !(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email.value))) { 
+                    window.alert( 
+                      "Please enter a valid e-mail address."); 
+                    email.focus(); 
+                    return false; 
+                } 
+  
+                if (phone.value == "") { 
+                    window.alert( 
+                      "Please enter your phone number."); 
+                    phone.focus(); 
+                    return false; 
+                } 
+  
+  
+                return true; 
+            } 
+
+            function output()
+            {
+                console.log("First name:" +fname.value);
+                console.log("First name:" +lname.value);
+                console.log("First name:" +email.value);
+                console.log("First name:" +phone.value);
+               
+            }
+        </script> 
+  
+
+    </head> 
+  
+    <body> 
+        <h1 style="text-align: center;">Information Form</h1> 
+        <form name="RegForm" action="/submit.php" 
+              onsubmit=" return HNS_form()" method="post"> 
+            <p>First name: <input type="text" 
+                            size="65" name="fName" /></p> 
+            <br /> 
+            <p>Last Name: <input type="text" 
+                               size="65" name="lName" /> 
+          </p> 
+               <br /> 
+
+            <p>Phone No.: <input type="text" 
+                        size="65" name="Phone" /></p> 
+            <br /> 
+           
+            <p>E-mail Address: <input type="text" 
+                            size="65" name="Email" /></p> 
+         <br /> 
+
+
+
+            <p> 
+                SELECT YOUR COURSE 
+                <select type="text" value="" name="Subject"> 
+                    <option>BTECH</option> 
+                    <option>BBA</option> 
+                    <option>BCA</option> 
+                    <option>B.COM</option> 
+                    
+                </select> 
+            </p> 
+            <label>Gender:</label>
+            <br />
+            <input type="radio" name="gender" value="m" onclick="reset_msg();" />Male
+            <br />
+            <input type="radio" name="gender" value="f" onclick="reset_msg();" />Female
+            <br />
+            <div id="msg"></div>
+            <input type="submit" value="Submit" onclick="return output();" />
+            </p> 
+        </form> 
+    </body> 
+</html> 
+  
