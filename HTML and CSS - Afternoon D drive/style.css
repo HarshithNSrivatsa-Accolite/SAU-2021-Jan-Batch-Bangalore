@@ -48,9 +48,11 @@ nav ul li a{
 	font-weight:700;
 }
 .logo{
-	font-family:RoadTest;
-	color:#db0808;
-	font-size: 40px;
+	font-family:myriad pro regular;
+	color:#da0a0a;
+	padding: 2%;
+	font-size: 30px;
+	
 }
 .active{
 	color:#2d2a2a;
